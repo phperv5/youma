@@ -27,4 +27,11 @@ class ScanController extends BaseController
     //网页跳转页面
     public function actionScan()
     {
+       $access_key = $this->getRequest("key", "");
+       $cacheKey = $this->env('CACHE_APP_KEY') . $access_key;
+       $model = RedisUtil::rememberCache($cacheKey, 24 * 60, function () use ($access_key) {
+            return LogicUtil::db_run_sql('select * from tbl_app where access_key=:access_key', array(':access_key' => $access_key));
+        });
+        $this->redirect($model['alipay_url']);    
     }
+}

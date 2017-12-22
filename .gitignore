@@ -10,3 +10,6 @@ scan/jsapi_ticket.json
 scan/protected/controllers/TestController.php
 
 .project
+/nbproject/private/
+nbproject/project.properties
+nbproject/project.xml
