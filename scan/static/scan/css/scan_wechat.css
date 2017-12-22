@@ -1,0 +1,207 @@
+/*css reset*/
+body, dl, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, form, img {margin:0; padding:0;}
+body, button, input, select, textarea {
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+em, b,i{font-style:normal}
+a,input{text-decoration:none; outline:none;}
+img{border:0;}
+input{outline:none;}
+li{list-style:none}
+area{outline:none; border:0;}
+.clearfix:after{content:".";display:block;height:0;visibility:hidden;clear:both;}
+.clearfix{zoom:1;}
+
+i{font-style:normal;}
+a:hover{text-decoration:none}
+a { text-decoration: none;outline:none; }
+a:hover,a:visited,a:link{ text-decoration: none; outline:none;}
+
+html,body{
+	width: 100%;
+	height: 100%;
+}
+body{
+	position: relative;
+}
+.browser-prompt{
+	width: 100%;
+	height: 100%;
+	padding-bottom: 60px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.browser-prompt .img-box{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.browser-prompt .img-box  img{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+}
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.tip_wrap{
+	position: absolute;
+	top: 0;
+	background-size:100%;
+	background-repeat: no-repeat;
+}
+.wxtip {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.app-tit {
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #fff;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+
+.alert-tips {
+	position: absolute;
+	bottom: 50%;
+	padding: 6px 10px;
+	background: rgba(0, 0, 0, 0.8);
+	left: 50%;
+	transform: translate(-50%, 0);
+	border-radius: 6px;
+	opacity: 1;
+	display: block;
+	z-index: 99;
+	color: #fff;
+	font-size: 12px;
+}
+
+.tip_android {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+
+/*按钮组*/
+
+.btn_warp {
+	width: 100%;
+	text-align: center;
+	z-index: 9;
+	overflow: hidden;
+}
+.btn-group{
+    font-size: 0;
+}
+.btn-group li {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+	margin-left: 5%;
+}
+
+.btn-group .btn {
+	width: auto;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	border-radius: 4px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+
+.btn-group .btn img {
+	width: 20px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.fenxiang-btn {
+	background: #5ac45e;
+}
+
+.zan-btn {
+	background: #f8645b;
+}
+
+.liuyan-btn {
+	background: #5cb4e6;
+}
+#footer .zhima_generalize{
+    margin-top: 14px;
+}
+.zhima_generalize .g-link,
+.zhima_generalize .g-img{
+    display: block;
+    width: 100%;
+}
+
+#footer .powered_by {
+    text-align: center;
+    margin: 5px;
+}
+#footer .powered_by a{
+    font-size: 10px;
+}
+/*分享的弹出层*/
+
+.page-warp {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.5;
+	z-index: 998;
+	overflow: hidden;
+	display: none;
+}
+
+.fenxiang-tips {
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	z-index: 999;
+	display: none;
+}
+.check_tips{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	line-height: 26px;
+	height: 26px;
+	padding-left: 15px;
+	background: #f7f7f7;
+	font-size: 12px;
+	color: #f00;
+}
+.footer{
+    line-height: 1;
+}
+#footer .powered {
+	color: #808080;
+	font-size: 14px;
+}
+
+#footer .complaint {
+	color: #4c4c4c;
+	text-decoration: underline;
+	font-size: 14px;
+}

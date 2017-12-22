@@ -1,0 +1,12 @@
+/scan/protected/runtime/*
+/.idea/*
+/framework/*
+/.idea
+/scan/protected/config/main.php
+/scan/protected/config/database.php
+/scan/index.php
+scan/access_token.json
+scan/jsapi_ticket.json
+scan/protected/controllers/TestController.php
+
+.project

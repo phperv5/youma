@@ -1,0 +1,56 @@
+html,body,.content{
+    width: 100%;
+    height: 100%;
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+    background: #fff;
+}
+p{
+    margin: 0;
+}
+.content{
+    overflow: hidden;
+}
+img{
+    width: 100%;
+}
+.icon_touxiang{
+    width: 60%;
+    height: auto;
+    margin: 2% auto 2% auto;
+}
+.icon_error{
+    width: 21.875%;
+    height: auto;
+    margin: auto auto;
+    background-repeat: no-repeat;
+}
+.icon_logo{
+    width: 30%;
+    height: auto;
+    margin: 0;
+}
+.errTips-box{
+    padding: 4% 5.5%;
+}
+.err-text{
+    line-height: 25px;
+}
+.err-text p{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    line-height: 26px;
+    color: #666;
+}
+#baidu-ad{
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+}
+.ad-link,
+.ad-img{
+    display: block;
+    width: 100%;
+}

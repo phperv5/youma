@@ -1,0 +1,52 @@
+/*css reset*/
+body, dl, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, form, img {margin:0; padding:0;}
+body, button, input, select, textarea {font:20px/160%, Microsoft YaHei, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-size:100%}
+em, b,i{font-style:normal}
+a,input{text-decoration:none; outline:none;}
+img{border:0;}
+input{outline:none;}
+li{list-style:none}
+area{outline:none; border:0;}
+.hd{text-indent:-999em;overflow:hidden;height:0;line-height:0;	font-size:0;}
+.ht1{overflow:hidden; text-indent:-999em;}
+.clearfix:after{content:".";display:block;height:0;visibility:hidden;clear:both;}
+.clearfix{zoom:1;}
+body{font-family:Microsoft YaHei;position:relative; max-width:640px; height:100%;color: #FFFFFF;margin:0 auto; background-size:cover}
+i{font-style:normal;}
+a:hover{text-decoration:none}
+.ht1{overflow:hidden;text-indent:-9999px;}
+
+html,body,.tip_wrap{width: 100%;height: 100%;overflow: hidden;}
+body{
+	max-width: 640px;
+	position: relative;
+}
+
+a { text-decoration: none;outline:none; }
+a:hover,a:visited,a:link{ text-decoration: none; outline:none;}
+
+
+/*底部*/
+
+#footer {
+	width: 100%;
+	line-height: 30px;
+	position: absolute;
+	bottom: 0;
+	z-index: 9;
+	text-align: center;
+	font-size: 14px;
+	font-family: " 微软雅黑";
+}
+
+#footer .powered {
+	color: #808080;
+	font-size: 14px;
+}
+
+#footer .complaint {
+	color: #4c4c4c;
+	text-decoration: underline;
+	font-size: 14px;
+}

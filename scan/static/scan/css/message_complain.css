@@ -1,0 +1,100 @@
+.title {
+	font-size: 18px;
+	color: #666;
+	text-align: center;
+	font-weight: 400;
+	padding: 8% 0;
+}
+
+.form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.form-group {
+	font-size: 0;
+}
+
+.form-group .lable {
+	display: inline-block;
+	text-align: right;
+	width: 25%;
+	color: #666;
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+.form-group input {
+	padding: 0 5px;
+	vertical-align: middle;
+}
+
+.form-group input,
+.form-group textarea {
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 14px;
+	border: 1px solid #e6e6e6;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.contact-way {
+	width: 75%;
+	height: 32px;
+}
+
+.content {
+	vertical-align: top;
+	width: 75%;
+	line-height: 32px;
+	padding: 5px;
+}
+
+.content-box {
+	margin-top: 20px;
+}
+
+.liuyan-tips {
+	width: 90%;
+	margin: 5px auto;
+	color: #666;
+	font-size: 13px;
+	text-align: right;
+}
+
+.btn {
+	display: block;
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 6px;
+	font-size: 16px;
+}
+
+.back-btn {
+	border: 1px solid #44aedd;
+	color: #44aedd;
+	margin-top: 25px;
+}
+
+.submit-btn {
+	background: #44aedd;
+	color: #fff;
+	margin-top: 10%;
+}
+
+.alert {
+	display: none;
+	width: 90%;
+	margin: 10px auto;
+	padding: 15px 0;
+	text-align: center;
+	border-radius: 4px;
+	color: #a94442;
+	font-size: 14px;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
