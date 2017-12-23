@@ -23,13 +23,13 @@ class UserAgentParser
         $androidKeywords = ['Android', 'Linux'];
         $desktopKeywords = ['Windows NT', 'Macintosh'];
 
-        if (LogicUtil::has_substr($userAgent, $iosKeywords)) {
+        if (self::has_substr($userAgent, $iosKeywords)) {
             $this->os = 'ios';
         }
-        if (LogicUtil::has_substr($userAgent, $androidKeywords)) {
+        if (self::has_substr($userAgent, $androidKeywords)) {
             $this->os = 'android';
         }
-        if (LogicUtil::has_substr($userAgent, $desktopKeywords)) {
+        if (self::has_substr($userAgent, $desktopKeywords)) {
             $this->os = 'desktop';
         }
 
@@ -37,23 +37,23 @@ class UserAgentParser
         $huaweiKeywords = ['huawei'];
         $xiaomiKeywords = ['mi', 'mi 4c', 'mi 5','redmi'];
 
-        if (LogicUtil::has_substr($userAgent, $huaweiKeywords)) {
+        if (self::has_substr($userAgent, $huaweiKeywords)) {
             $this->brand = 'huawei';
-        } elseif (LogicUtil::has_substr($userAgent, $xiaomiKeywords)) {
+        } elseif (self::has_substr($userAgent, $xiaomiKeywords)) {
             $this->brand = 'xiaomi';
         }
 
         // 判断客户端类型
-        if (LogicUtil::has_substr($userAgent, 'micromessenger')) {
+        if (self::has_substr($userAgent, 'micromessenger')) {
             $this->client = 'wechat';
         }
 
-        if (LogicUtil::has_substr($userAgent, 'weibo')) {
+        if (self::has_substr($userAgent, 'weibo')) {
             $this->client = 'weibo';
         }
 
         //增加支付宝判断
-        if (LogicUtil::has_substr($userAgent, 'alipay')) {
+        if (self::has_substr($userAgent, 'alipay')) {
             $this->client = 'alipay';
         }
 
@@ -96,5 +96,20 @@ class UserAgentParser
     public function getClient()
     {
         return $this->client;
+    }
+
+    public static function has_substr($str, $subs)
+    {
+        if (!is_array($subs)) {
+            $subs = array($subs);
+        }
+
+        foreach ($subs as $sub) {
+            if (stripos($str, $sub) !== false) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

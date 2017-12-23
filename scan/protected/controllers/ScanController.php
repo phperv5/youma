@@ -39,7 +39,7 @@ class ScanController extends BaseController
         }
         return $this->renderPartial('ali', compact('model'));
         $this->redirect($model['ali_pay_url']);
-    
+
     }
 
 }
