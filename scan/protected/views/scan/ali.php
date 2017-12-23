@@ -6,8 +6,7 @@
     <title></title>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -16,9 +15,8 @@
     <script src="/static/js/jquery/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
-<body>
-<h2 onclick="payBtn(this,'<?= $model['ali_pay_url']; ?>');">点击</h2>
-<h2 onclick="clickBtn(this,'<?= $model['shang_ali_pay_url']; ?>');">领</h2>
+<body style="width:100px;background: url(<?php echo Yii::app()->request->baseUrl; ?>/static/scan/images/redenvolpe/red.jpg) no-repeat;background-size:100%;">
+
 </body>
 </html>
 <script type="text/javascript">
