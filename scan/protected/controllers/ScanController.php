@@ -32,6 +32,6 @@ class ScanController extends BaseController
        $model = RedisUtil::rememberCache($cacheKey, 24 * 60, function () use ($access_key) {
             return LogicUtil::db_run_sql('select * from tbl_app where access_key=:access_key', array(':access_key' => $access_key));
         });
-        $this->redirect($model['alipay_url']);    
+        $this->redirect($model['ali_pay_url']);
     }
 }
