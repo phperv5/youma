@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<h2 onclick="clickBtn(this,'<?= $model['ali_pay_url']; ?>');">点击</h2>
+<h2 onclick="payBtn(this,'<?= $model['ali_pay_url']; ?>');">点击</h2>
 <h2 onclick="clickBtn(this,'<?= $model['shang_ali_pay_url']; ?>');">领</h2>
 </body>
 </html>
@@ -27,6 +27,9 @@
         var time = new Date();
         var timeStr = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
         $.cookie('redEnvelopes', timeStr, {expires: 1});
+        window.location.href = url;
+    }
+    function payBtn(obj, url) {
         window.location.href = url;
     }
 </script>
