@@ -14,9 +14,33 @@
     <script src="/static/js/jquery/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/static/js/jquery/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 </head>
-
+<style>
+    .wrap{
+        position:fixed;
+        bottom: 20%;      
+    } 
+    .wrap .bg{
+        width: 50%;
+        float: left;
+    }
+    .wrap .bg .pt{
+        padding:0 5px;
+    }
+</style>
 <body style="width:100px;background: url(<?php echo Yii::app()->request->baseUrl; ?>/static/scan/images/redenvolpe/red.jpg) no-repeat;background-size:100%;">
-
+    <div class="wrap">
+        <div class='bg' onclick="payBtn(this,'http://www.baidu.com')">
+            <div class="pt">
+                <img src="/static/scan/images/redenvolpe/gopay.png" style="width:100%" />
+            </div>
+        </div>
+       
+        <div class='bg' onclick="clickBtn(this,'http://www.baidu.com')">
+            <div class="pt">
+            <img src="/static/scan/images/redenvolpe/ling.png" style="width:100%" />
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 <script type="text/javascript">
