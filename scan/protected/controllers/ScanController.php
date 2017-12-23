@@ -31,6 +31,15 @@ class ScanController extends BaseController
             $result = LogicUtil::db_run_sql('select * from tbl_app where access_key=:access_key LIMIT 1', array(':access_key' => $access_key));
             return isset($result[0]) ? $result[0] : null;
         });
+        $userAgent = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
+        $userAgentParser = new UserAgentParser($userAgent);
+        $client = $userAgentParser->getClient();   // 客户端类型
+        if ($client == 'alipay') {
+            return $this->renderPartial('msg');
+        }
+        return $this->renderPartial('ali', compact('model'));
         $this->redirect($model['ali_pay_url']);
+    
     }
+
 }
