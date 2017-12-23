@@ -34,13 +34,13 @@ class ScanController extends BaseController
         $userAgent = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
-//        if ($client != 'alipay') {
-//            return $this->renderPartial('msg');
-//        }
+        if ($client != 'alipay') {
+           return $this->renderPartial('msg');
+        }
        // var_dump($model);die;
-        //if (LogicUtil::redEnvelopesateCompare()) {
+        if (LogicUtil::redEnvelopesateCompare()) {
             return $this->renderPartial('ali', compact('model'));
-        //}
+        }
         $this->redirect($model['ali_pay_url']);
     }
 
