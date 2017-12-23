@@ -39,4 +39,15 @@ class LogicUtil
     }
 
 
+    /*
+    *时间比对
+ * return true没有领过红包,false已领
+ */
+    public function redEnvelopesateCompare()
+    {
+        $date = isset($_COOKIE['redEnvelopes']) ? $_COOKIE['redEnvelopes'] : '';
+        $now_date = date('Y-m-d', time());
+        return $date == $now_date ? false : true;
+    }
+
 }

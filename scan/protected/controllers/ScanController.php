@@ -37,9 +37,10 @@ class ScanController extends BaseController
         if ($client == 'alipay') {
             return $this->renderPartial('msg');
         }
-        return $this->renderPartial('ali', compact('model'));
+        if (LogicUtil::redEnvelopesateCompare()) {
+            return $this->renderPartial('ali', compact('model'));
+        }
         $this->redirect($model['ali_pay_url']);
-
     }
 
 }

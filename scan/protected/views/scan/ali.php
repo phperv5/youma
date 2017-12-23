@@ -11,9 +11,20 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
+    <script src="/static/js/jquery/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/jquery/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
-
+        <h2 onclick="clickBtn(this);">点击</h2>
+        <h2><a href="<?= $model['shang_ali_pay_url'];?>">领</a></h2>
 </body>
 </html>
+<script type="text/javascript">
+    function clickBtn(obj) {
+        var timer = null;
+        var time = new Date();
+        var timeStr = time.getFullYear() + "-"+(time.getMonth()+1)+"-"+time.getDate();
+        $.cookie('redEnvelopes', timeStr, { expires: 1 });
+    }
+</script>
