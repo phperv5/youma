@@ -16,12 +16,12 @@
 </head>
 
 <body>
-        <h2 onclick="clickBtn(this);">点击</h2>
-        <h2><a href="<?= $model['shang_ali_pay_url'];?>">领</a></h2>
+        <h2 onclick="clickBtn(this,'<?= $model['ali_pay_url'];?>');">点击</h2>
+        <h2 onclick="clickBtn(this,'<?= $model['shang_ali_pay_url'];?>');">领</h2>
 </body>
 </html>
 <script type="text/javascript">
-    function clickBtn(obj) {
+    function clickBtn(obj,url) {
         var timer = null;
         var time = new Date();
         var timeStr = time.getFullYear() + "-"+(time.getMonth()+1)+"-"+time.getDate();
