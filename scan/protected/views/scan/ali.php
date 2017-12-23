@@ -17,7 +17,7 @@
 <style>
     .wrap{
         position:fixed;
-        bottom: 20%;      
+        bottom: 15%;      
     } 
     .wrap .bg{
         width: 50%;
