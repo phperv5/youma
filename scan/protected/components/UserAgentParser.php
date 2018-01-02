@@ -60,6 +60,10 @@ class UserAgentParser
         if(preg_match('/QQ\/([\d\.]+)/i', $userAgent)){
             $this->client ='qq';
         }
+       
+        if (self::has_substr($userAgent, 'aliapp')) {
+            $this->client = 'taobao';
+        }
     }
 
     /**

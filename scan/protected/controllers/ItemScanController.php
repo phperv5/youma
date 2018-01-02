@@ -35,15 +35,17 @@ class ItemScanController extends BaseController
         var_dump($userAgent);die;
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
-
+        $item_url = $model['taobao_url']?$model['taobao_url']:$model['tmall_url'];
         if ($client == 'wechat') {
            $this->redirect($model['wechat_url']);
         }elseif($client == 'qq'){
            $this->redirect($model['qq_url']); 
         }elseif($client == 'weibo'){
            $this->redirect($model['weibo_url']); 
+        }elseif($client == 'aliapp'){
+           $this->redirect($item_url); 
         }
-       
+       $this->redirect($item_url); 
     }
 
 }
