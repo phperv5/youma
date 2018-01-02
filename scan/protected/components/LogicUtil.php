@@ -46,7 +46,7 @@ class LogicUtil
     public static function redEnvelopesateCompare()
     {
         $date = isset($_COOKIE['redEnvelopes']) ? $_COOKIE['redEnvelopes'] : '';
-        $now_date = date('Y-m-d', time());
+        $now_date = date('Y-n-j', time());
         return $date == $now_date ? false : true;
     }
 
