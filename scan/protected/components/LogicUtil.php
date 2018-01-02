@@ -47,8 +47,6 @@ class LogicUtil
     {
         $date = isset($_COOKIE['redEnvelopes']) ? $_COOKIE['redEnvelopes'] : '';
         $now_date = date('Y-m-d', time());
-        echo $date;
-        echo $now_date;
         return $date == $now_date ? false : true;
     }
 
