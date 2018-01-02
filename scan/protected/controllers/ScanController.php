@@ -37,7 +37,6 @@ class ScanController extends BaseController
         if ($client != 'alipay') {
            return $this->renderPartial('msg');
         }
-       // var_dump($model);die;
         if (LogicUtil::redEnvelopesateCompare()) {
             return $this->renderPartial('ali', compact('model'));
         }
