@@ -32,20 +32,19 @@ class ItemScanController extends BaseController
             return isset($result[0]) ? $result[0] : null;
         });
         $userAgent = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
-        var_dump($userAgent);die;
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
-        $item_url = $model['taobao_url']?$model['taobao_url']:$model['tmall_url'];
+        $item_url = $model['taobao_url'] ? $model['taobao_url'] : $model['tmall_url'];
         if ($client == 'wechat') {
-           $this->redirect($model['wechat_url']);
-        }elseif($client == 'qq'){
-           $this->redirect($model['qq_url']); 
-        }elseif($client == 'weibo'){
-           $this->redirect($model['weibo_url']); 
-        }elseif($client == 'aliapp'){
-           $this->redirect($item_url); 
+            $this->redirect($model['wechat_url']);
+        } elseif ($client == 'qq') {
+            $this->redirect($model['qq_url']);
+        } elseif ($client == 'weibo') {
+            $this->redirect($model['weibo_url']);
+        } elseif ($client == 'aliapp') {
+            $this->redirect($item_url);
         }
-       $this->redirect($item_url); 
+        $this->redirect($item_url);
     }
 
 }
