@@ -53,7 +53,7 @@ class UserAgentParser
         }
 
         //增加支付宝判断
-        if (self::has_substr($userAgent, 'alipay')) {
+        if (self::has_substr($userAgent, 'alipayclient')) {
             $this->client = 'alipay';
         }
 
@@ -61,7 +61,7 @@ class UserAgentParser
             $this->client ='qq';
         }
        
-        if (self::has_substr($userAgent, 'aliapp')) {
+        if (self::has_substr($userAgent, 'aliapp') && self::has_substr($userAgent, 'TB')) {
             $this->client = 'taobao';
         }
     }
