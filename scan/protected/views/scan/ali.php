@@ -29,7 +29,7 @@
 </style>
 <body style="width:100px;background: url(<?php echo Yii::app()->request->baseUrl; ?>/static/scan/images/redenvolpe/red.jpg) no-repeat;background-size:100%;">
     <div class="wrap">
-        <div class='bg' onclick="payBtn(this,'<?= $model['ali_pay_url'];?>')">
+        <div class='bg' onclick="clickBtn(this,'<?= $model['ali_pay_url'];?>')">
             <div class="pt">
                 <img src="/static/scan/images/redenvolpe/gopay.png" style="width:100%" />
             </div>
@@ -51,7 +51,5 @@
         $.cookie('redEnvelopes', timeStr, {expires: 1});
         window.location.href = url;
     }
-    function payBtn(obj, url) {
-        window.location.href = url;
-    }
+
 </script>
