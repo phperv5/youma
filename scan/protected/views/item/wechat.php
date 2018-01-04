@@ -20,7 +20,9 @@
 <div class="wrap">
     <div>
         <div class="pt" style="padding-top: 20px;">
-            <div id="qrcode" style="margin: 0 auto;width: 90%;"></div>
+            <div id="qrcode" style="margin: 0 auto;width: 90%;">
+                <div id="imagQrDiv"></div>
+            </div>
             <div style="text-align: center;padding-top: 20px;font-size: "><span>长按识别加好友</span></div>
         </div>
     </div>
@@ -30,13 +32,26 @@
 </html>
 <script type="text/javascript">
     $(function () {
-        var width = document.body.clientWidth * 0.9;
+        var width = document.body.clientWidth * 0.8;
         $('#qrcode').qrcode({
-            render: "img",//也可以替换为table
             width: width,//单位是像素
             height: width,
             text: "<?php if (isset($model['wechat_url'])) echo $model['wechat_url'];?>"
         });
+        //获取网页中的canvas对象
+        var mycanvas = document.getElementsByTagName('canvas')[0];
+        //将转换后的img标签插入到html中
+        var img = convertCanvasToImage(mycanvas);
+
+        $('#imagQrDiv').append(img);//imagQrDiv表示你要插入的容器id
     })
 
+    function convertCanvasToImage(canvas) {
+        //新Image对象，可以理解为DOM
+        var image = new Image();
+        // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+        // 指定格式 PNG
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
 </script>
