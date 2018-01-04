@@ -21,7 +21,7 @@
     <div>
         <div class="pt" style="padding-top: 20px;">
             <div id="qrcode" style="margin: 0 auto;width: 90%;"></div>
-            <div style="text-align: center;padding-top: 20px;"><span>长按识别加好友</span></div>
+            <div style="text-align: center;padding-top: 20px;font-size: "><span>长按识别加好友</span></div>
         </div>
     </div>
 
@@ -29,7 +29,6 @@
 </body>
 </html>
 <script type="text/javascript">
-
     window.onload = function () {
         var width = document.body.clientWidth * 0.9;
         var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -41,5 +40,5 @@
             qrcode.makeCode(document.getElementById("getval").value);
         }
     }
-    
+
 </script>
