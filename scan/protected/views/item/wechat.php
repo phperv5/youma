@@ -22,7 +22,7 @@
         <div class="pt" style="padding-top: 80px;">
             <div id="qrcode" style="display: none;"></div>
             <div id="imagQrDiv" style="margin: 0 auto;width: 80%;"></div>
-            <div style="text-align: center;padding-top: 20px;font-size:16px; "><span>长按识别加好友</span></div>
+            <div style="text-align: center;padding-top: 20px;font-size:16px; "><span>长按识别加群和好友</span></div>
         </div>
     </div>
 
