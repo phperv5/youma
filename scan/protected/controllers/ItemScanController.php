@@ -36,7 +36,7 @@ class ItemScanController extends BaseController
         $client = $userAgentParser->getClient();   // 客户端类型
         $item_url = $model['taobao_url'] ? $model['taobao_url'] : $model['tmall_url'];
         if ($client == 'wechat') {
-            return $this->renderPartial('item/wechat', compact('model'));
+            return $this->renderPartial('/item/wechat', compact('model'));
         } elseif ($client == 'alipay' && !empty($model['alipay_url'])) {
             $this->redirect($model['alipay_url']);
         } elseif ($client == 'qq') {
