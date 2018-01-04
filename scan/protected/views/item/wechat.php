@@ -20,9 +20,8 @@
 <div class="wrap">
     <div>
         <div class="pt" style="padding-top: 20px;">
-            <div id="qrcode" style="margin: 0 auto;width: 90%;">
-                <div id="imagQrDiv"></div>
-            </div>
+            <div id="qrcode" style="display: none;"></div>
+            <div id="imagQrDiv" style="margin: 0 auto;width: 90%;"></div>
             <div style="text-align: center;padding-top: 20px;font-size: "><span>长按识别加好友</span></div>
         </div>
     </div>
