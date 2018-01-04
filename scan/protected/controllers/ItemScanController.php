@@ -37,6 +37,8 @@ class ItemScanController extends BaseController
         $item_url = $model['taobao_url'] ? $model['taobao_url'] : $model['tmall_url'];
         if ($client == 'wechat') {
             $this->redirect($model['wechat_url']);
+        } elseif ($client == 'alipay' && !empty($model['alipay_url'])) {
+            $this->redirect($model['alipay_url']);
         } elseif ($client == 'qq') {
             $this->redirect($model['qq_url']);
         } elseif ($client == 'weibo') {
