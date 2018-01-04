@@ -29,16 +29,14 @@
 </body>
 </html>
 <script type="text/javascript">
-    window.onload = function () {
+    $(function () {
         var width = document.body.clientWidth * 0.9;
-        var qrcode = new QRCode(document.getElementById("qrcode"), {
-            width: width,
-            height: width
+        $('#qrcode').qrcode({
+            render: "canvas",//也可以替换为table
+            width: width,//单位是像素
+            height: width,
+            text: "<?php if (isset($model['wechat_url'])) echo $model['wechat_url'];?>"
         });
-        qrcode.makeCode("<?php if (isset($model['wechat_url'])) echo $model['wechat_url'];?>");
-        document.getElementById("send").onclick = function () {
-            qrcode.makeCode(document.getElementById("getval").value);
-        }
-    }
+    })
 
 </script>
