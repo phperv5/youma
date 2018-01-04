@@ -32,7 +32,7 @@
     $(function () {
         var width = document.body.clientWidth * 0.9;
         $('#qrcode').qrcode({
-            render: "canvas",//也可以替换为table
+            render: "img",//也可以替换为table
             width: width,//单位是像素
             height: width,
             text: "<?php if (isset($model['wechat_url'])) echo $model['wechat_url'];?>"
