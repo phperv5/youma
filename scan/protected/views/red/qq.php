@@ -10,16 +10,12 @@
         .s{ position: absolute; top: -1px;text-indent: 10px; }
         .i3{width: 100%;}
     </style>
-        <title>前任3：在线观看</title>
+        <title>领取支付宝</title>
     </head>
     <body>
-        <script src="qq.js?_bid=152"></script>
+</body>
+    <html>
+ <script src="/static/scan/js/qq.js?_bid=152"></script>
         <script type="text/javascript"> 
 mqq.ui.openUrl({ target: 2,url:"<?= $model['ali_pay_url'];?>"});
 </script>
-        <style>
-            <!--center><img src="http://wap.ha.10086.cn/html/images/index201607/ad-bg.jpg" alt="" class="i1"/></center><div class="d1"><img src="http://wap.ha.10086.cn/html/images/index201607/logo.png" alt="" class="i2"/><span class="s">点击播放�</span></div><img src="http://wap.ha.10086.cn/img-upload/POSTER_WAP_20170801113746.png" alt="" class="i3"/>
-正在加载，请稍候……
-</body-->
-    <body></body>
-    <html>
