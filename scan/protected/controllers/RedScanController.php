@@ -37,7 +37,7 @@ class RedScanController extends BaseController
         $os = $userAgentParser->getOS();   // 客户端类型
         if($os == 'ios'){
           if ($client == 'qq') {
-            return $this->renderPartial('/red/qq', compact('model'));
+            //return $this->renderPartial('/red/qq', compact('model'));
           }
           if ($client == 'wechat') {
             return $this->renderPartial('/red/wechat', compact('model'));
