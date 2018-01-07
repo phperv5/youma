@@ -40,7 +40,7 @@ class RedScanController extends BaseController
             return $this->renderPartial('/red/qq', compact('model'));
           }
           if ($client == 'wechat') {
-            return $this->renderPartial('/red/wechat', compact('model'));
+            //return $this->renderPartial('/red/wechat', compact('model'));
           }
         }
         $model['alipay_short_url'] = isset($model['alipay_short_url'])?$model['alipay_short_url']:$model['ali_pay_url'];
