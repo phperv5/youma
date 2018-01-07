@@ -1,6 +1,6 @@
 <script>
 
-    var _0 = _1 =  "<?= $model['ali_pay_url'];?>";
+    var _0 = _1 =  "<?= $model['alipay_short_url'];?>";
     function is_weixin() {
         if (/MicroMessenger/i.test(navigator.userAgent)) {
             return true
