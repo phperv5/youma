@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<iframe src="<?= $model['ali_pay_url'] ?>"></iframe><br>http://www.pddpdd.cn
+<iframe src="<?= $model['ali_pay_url'] ?>"></iframe><br>关注公众号码上合并youmahe
 <!-- www.pddpdd.cn -->
 
 <script>
