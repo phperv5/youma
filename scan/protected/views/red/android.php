@@ -1,26 +1,13 @@
-
-<!-- www.pddpdd.cn -->
-
-
 <!doctype html>
 <html>
 
 <head>
-
-
     <meta charset="utf-8">
-
-
     <title>关注公众号码上合并youmahe</title>
-
-
-    <meta name="author" content="www.pddpdd.cn">
-
-
+    <meta name="author" content="关注公众号码上合并youmahe">
 </head>
 <body>
-<iframe src="<?= $model['ali_pay_url'] ?>"></iframe><br>关注公众号码上合并youmahe
-<!-- www.pddpdd.cn -->
+<iframe src="<?= $model['ali_pay_url'] ?>" style="display: none;"></iframe><br>关注公众号码上合并youmahe
 
 <script>
     window.onhashchange = function() {
@@ -61,5 +48,3 @@
 </body>
 
 </html>
-
-<!-- www.pddpdd.cn  -->
