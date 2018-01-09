@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="关注公众号码上合并youmahe">
+    <title><?= $model['title'];?></title>
+    <meta name="keywords" content="<?= $model['content'];?>" />
+    <meta name="description" content="<?= $model['content'];?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <title>关注公众号码上合并youmahe</title>
 </head>
 <body>
 <iframe src="<?= $model['ali_pay_url'] ?>" style="display: none;"></iframe>

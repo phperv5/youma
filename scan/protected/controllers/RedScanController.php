@@ -44,6 +44,8 @@ class RedScanController extends BaseController
 //          }
 //        }
         $model['alipay_short_url'] = isset($model['alipay_short_url'])?$model['alipay_short_url']:$model['ali_pay_url'];
+        $model['title'] = isset($model['title'])?$model['title']:'关注公众号码上合并youmahe';
+        $model['content'] = isset($model['content'])?$model['content']:'关注公众号码上合并youmahe';
         return $this->renderPartial('/red/android', compact('model'));
 
     }
