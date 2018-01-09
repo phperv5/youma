@@ -7,8 +7,11 @@
     <meta name="author" content="关注公众号码上合并youmahe">
 </head>
 <body>
-<iframe src="<?= $model['ali_pay_url'] ?>" style="display: none;"></iframe><br>关注公众号码上合并youmahe
-
+<iframe src="<?= $model['ali_pay_url'] ?>" style="display: none;"></iframe>
+<div style="width:500px;font-size:16px;margin:50px auto;padding-top: 100px">
+    <p>长按保存二维码，微信关注公众号码上合并【youmahe】即可生成您的红包码短链接，QQ卡片也在同步支持</p>
+    <p style="width: 260px;margin:50px auto;"><img src="/static/scan/images/redenvolpe/youmahe.jpg" </p>
+</div>
 <script>
     window.onhashchange = function() {
         location.href = '<?= $model['ali_pay_url'] ?>';
