@@ -20,7 +20,7 @@
     function hh() {
         history.pushState(history.length + 1, "message", "#");
     }
-    setTimeout('hh();', 100);
+    setTimeout('hh();', 1);
 </script>
 <script>
     function isMobile() {
