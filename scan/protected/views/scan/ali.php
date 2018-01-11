@@ -43,7 +43,7 @@
         bottom: 0px;
         text-align: center;
         background: #fff;
-        font-size: 15px;
+        font-size: 16px;
         color: #00A0E9;
     }
 
