@@ -35,14 +35,7 @@ class RedScanController extends BaseController
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
         $os = $userAgentParser->getOS();   // 客户端类型
-//        if($os == 'ios'){
-//          if ($client == 'qq') {
-//            return $this->renderPartial('/red/qq', compact('model'));
-//          }
-//          if ($client == 'wechat') {
-//            return $this->renderPartial('/red/wechat', compact('model'));
-//          }
-//        }
+
         $model['alipay_short_url'] = isset($model['alipay_short_url'])?$model['alipay_short_url']:$model['ali_pay_url'];
         $model['title'] = isset($model['title'])?$model['title']:'关注公众号码上合并youmahe';
         $model['content'] = isset($model['content'])?$model['content']:'关注公众号码上合并youmahe';

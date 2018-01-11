@@ -3,10 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="zh_CN">
-    <title></title>
+    <title>支付宝</title>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -15,35 +16,63 @@
     <script src="/static/js/jquery/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <style>
-    .wrap{
-        position:fixed;
-        bottom: 15%;      
-    } 
-    .wrap .bg{
-        width: 50%;
-        float: left;
+    body {
+        margin: 0;
+        padding: 0;
     }
-    .wrap .bg .pt{
-        padding:0 5px;
+
+    .wrap {
+        position: fixed;
+        bottom: 15%;
+    }
+
+    .wrap .bg {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .wrap .bg .pt {
+        padding: 0 5px;
+    }
+
+    .bottom {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        position: fixed;
+        bottom: 0px;
+        text-align: center;
+        background: #fff;
+        font-size: 15px;
+        color: #00A0E9;
+    }
+
+    #show {
+        font-weight: bold;
     }
 </style>
-<body style="width:100px;background: url(<?php echo Yii::app()->request->baseUrl; ?>/static/scan/images/redenvolpe/red.jpg) no-repeat;background-size:100%;">
-    <div class="wrap">
-        <div class='bg' onclick="clickBtn(this,'<?= $model['ali_pay_url'];?>')">
-            <div class="pt">
-                <img src="/static/scan/images/redenvolpe/gopay.png" style="width:100%" />
-            </div>
-        </div>
-       
-        <div class='bg' onclick="clickBtn(this,'<?= $model['shang_ali_pay_url'];?>')">
-            <div class="pt">
-            <img src="/static/scan/images/redenvolpe/ling.png" style="width:100%" />
-            </div>
+<body style="width:100%;background: url(<?php echo Yii::app()->request->baseUrl; ?>/static/scan/images/redenvolpe/red.jpg) no-repeat;background-size:100%;">
+<div class="wrap">
+    <div class='bg' onclick="clickBtn(this,'<?= $model['shang_ali_pay_url']; ?>')">
+        <div class="pt">
+            <img src="/static/scan/images/redenvolpe/ling.png" style="width:100%"/>
         </div>
     </div>
+</div>
+<div class="bottom"><span>正在跳转支付宝支付..<span id="show">3</span>秒</span></div>
 </body>
 </html>
 <script type="text/javascript">
+    var t = 2; // 设定跳转的时间
+    setInterval("refer()", 1000); // 启动1秒定时
+    function refer() {
+        if (t == 0) {
+            location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
+        }
+        document.getElementById('show').innerHTML = "" + t; // 显示倒计时
+        t--; // 计数器递减
+    }
+
     function clickBtn(obj, url) {
         var timer = null;
         var time = new Date();
