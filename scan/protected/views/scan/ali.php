@@ -67,6 +67,7 @@
     setInterval("refer()", 1000); // 启动1秒定时
     function refer() {
         if (t == 0) {
+            saveCookie();
             location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
         }
         document.getElementById('show').innerHTML = "" + t; // 显示倒计时
@@ -74,11 +75,15 @@
     }
 
     function clickBtn(obj, url) {
+        saveCookie();
+        window.location.href = url;
+    }
+
+    function saveCookie() {
         var timer = null;
         var time = new Date();
         var timeStr = time.getFullYear() + "-" + (time.getMonth() + 1) + "-" + time.getDate();
         $.cookie('redEnvelopes', timeStr, {expires: 1});
-        window.location.href = url;
     }
 
 </script>
