@@ -45,9 +45,11 @@
         background: #fff;
         font-size: 16px;
         color: #00A0E9;
+        font-weight: bold;
     }
 
     #show {
+
         font-weight: bold;
     }
 </style>
@@ -59,16 +61,16 @@
         </div>
     </div>
 </div>
-<div class="bottom"><span>正在跳转支付宝支付..<span id="show">3</span>秒</span></div>
+<div class="bottom" onclick="clickBtn(this,'<?= $model['shang_ali_pay_url']; ?>')"><span>点击立即支付..<span id="show">5</span>秒</span></div>
 </body>
 </html>
 <script type="text/javascript">
-    var t = 2; // 设定跳转的时间
+    var t = 4; // 设定跳转的时间
     setInterval("refer()", 1000); // 启动1秒定时
     function refer() {
         if (t == 0) {
             saveCookie();
-            location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
+            //location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
         }
         document.getElementById('show').innerHTML = "" + t; // 显示倒计时
         t--; // 计数器递减
