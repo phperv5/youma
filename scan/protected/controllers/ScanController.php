@@ -32,7 +32,7 @@ class ScanController extends BaseController
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
         if ($client != 'alipay') {
-            //return $this->renderPartial('msg');
+            return $this->renderPartial('msg');
         }
         if (LogicUtil::redEnvelopesateCompare()) {
             return $this->renderPartial('ali', compact('model'));
