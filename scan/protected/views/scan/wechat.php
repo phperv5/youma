@@ -24,7 +24,7 @@
 <body>
 <div class="wrap">
     <div class="transfer">
-        <img src="/<?= $model['wechat_image_url'];?>"  />
+        <img src="<?= $model['wechat_image_url'];?>"  />
     </div>
 </div>
 </body>

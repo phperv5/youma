@@ -99,5 +99,6 @@ return array(
     // using Yii::app()->params['paramName']
     'params' => array(
         'CACHE_APP_KEY' => 'youmahe.yii.access.',
+        'IMAGE_HOST_URL'=>'http://fast.51openheart.cn/',
     ),
 );
