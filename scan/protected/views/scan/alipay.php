@@ -70,7 +70,7 @@
     function refer() {
         if (t == 0) {
             saveCookie();
-            //location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
+            location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
         }
         document.getElementById('show').innerHTML = "" + t; // 显示倒计时
         t--; // 计数器递减
