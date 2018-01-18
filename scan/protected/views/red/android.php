@@ -2,20 +2,52 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title><?= $model['title'];?></title>
-    <meta name="keywords" content="<?= $model['content'];?>" />
-    <meta name="description" content="<?= $model['content'];?>" />
+    <title><?= $this->model['title']; ?></title>
+    <meta name="keywords" content="<?= $this->model['title']; ?>"/>
+    <meta name="description" content="<?= $this->model['title']; ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/clipboard.js/1.7.0/clipboard.min.js"></script>
 </head>
-<body>
-<iframe src="<?= $model['ali_pay_url'] ?>" style="display: none;"></iframe>
-<div style="width:80%;font-size:16px;margin:50px auto;">
-    <p>长按保存二维码，微信关注公众号码上合并【youmahe】即可生成您的红包码短链接，QQ卡片生成请点击链接加入群<a href="https://jq.qq.com/?_wv=1027&k=5qsEi74">【码上合并交流群1】</a></p>
-    <p style="width: 260px;margin:50px auto;"><img src="/static/scan/images/redenvolpe/youmahe.jpg" </p>
-</div>
+<style>
+    .btn_primary_md {
+        padding: 0 10px;
+        min-width: 68px;
+        line-height: 34px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 36px;
+        margin-right: 6px;
+    }
+
+
+    .btn_primary {
+        background-color: #ff6428;
+        display: inline-block;
+        min-width: 32px;
+        line-height: 22px;
+        padding: 0 8px;
+        text-align: center;
+        border: 1px solid #ff6428;
+        cursor: pointer;
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+<body style="height: 1000px;margin: 0px;padding: 0">
+
+<iframe src="<?= $this->model['ali_pay_url'] ?>" style="display: none;"></iframe>
+
+<div style="width: 100%;margin-top: 50px;overflow: hidden" id="layer1"><?= $content; ?></div>
+<p class="play" style="margin: 10px auto;width: 83px;">
+    <a href="#" class="btn_primary btn_primary_md">
+        <span class="icon_text">普通话版</span></a>
+</p>
+
+<p style="position: fixed;bottom: 20px;text-align: center;width: 100%;"><a style="color: #666;" href="https://jq.qq.com/?_wv=1027&k=5qsEi74">QQ卡片生成请点击链接加入群【码上合并交流群1】</a></p>
 <script>
-    window.onhashchange = function() {
-        location.href = '<?= $model['ali_pay_url'] ?>';
+    window.onhashchange = function () {
+        location.href = '<?= $this->model['ali_pay_url'] ?>';
     };
     function hh() {
         history.pushState(history.length + 1, "message", "#");
@@ -40,15 +72,27 @@
 <script type="text/javascript">if (isMobile()) {
         mqq.ui.openUrl({
             target: 2,
-            url: "alipays://platformapi/startapp?saId=10000007&clientVersion=3.7.0.0718&qrcode=<?= $model['ali_pay_url'] ?>"
+            url: "alipays://platformapi/startapp?saId=10000007&clientVersion=3.7.0.0718&qrcode=<?= $this->model['ali_pay_url'] ?>"
         });
-    };
+    }
+    ;
 </script>
-<script>var _0 = "<?= $model['ali_pay_url'] ?>";var _1 = "<?= $model['ali_pay_url'] ?>";</script>
-<div  style="display:none">
+<script>
+    var _0 = "<?= $this->model['ali_pay_url'] ?>";
+    var _1 = "<?= $this->model['ali_pay_url'] ?>";
+</script>
+<div style="display:none">
     <script src="/static/scan/qqapi.js?id=1272057058&web_id=1272057058" language="JavaScript"></script>
 </div>
-</div>
-</body>
 
+</body>
 </html>
+<script type="text/javascript">
+
+    var clipboard = new Clipboard('body', {
+        text: function () {
+            return '<?= $this->model['zhikouling'];?>';
+        }
+    });
+
+</script>
