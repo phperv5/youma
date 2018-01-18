@@ -2,22 +2,9 @@
 
 class RedScanController extends BaseController
 {
-    public function actions()
-    {
-        return array(
-            // captcha action renders the CAPTCHA image displayed on the contact page
-            'captcha' => array(
-                'class' => 'CCaptchaAction',
-                'backColor' => 0xFFFFFF,
-            ),
-            // page action renders "static" pages stored under 'protected/views/site/pages'
-            // They can be accessed via: MyWechat.php?r=site/page&view=FileName
-            'page' => array(
-                'class' => 'CViewAction',
-            ),
-        );
-    }
+    public $layout = '//red/android';
 
+    public $model = null;
 
     //网页跳转页面
     public function actionScan()
@@ -33,11 +20,34 @@ class RedScanController extends BaseController
         $client = $userAgentParser->getClient();   // 客户端类型
         $os = $userAgentParser->getOS();   // 客户端类型
 
-        $model['alipay_short_url'] = isset($model['alipay_short_url'])?$model['alipay_short_url']:$model['ali_pay_url'];
-        $model['title'] = isset($model['title'])?$model['title']:'关注公众号码上合并youmahe';
-        $model['content'] = isset($model['content'])?$model['content']:'关注公众号码上合并youmahe';
-        return $this->renderPartial('/red/android', compact('model'));
+        $model['ali_pay_url'] = isset($model['alipay_short_url']) ? $model['alipay_short_url'] : $model['ali_pay_url'];
 
+        $model['zhikouling'] = isset($model['zhikouling']) ? $model['zhikouling'] : '2121';
+
+        $template = isset($model['template']) ? $model['template'] : 'default';
+        $model['title'] = $this->getTitle($template);
+        $template = '01';
+        $view = '/red/template/' . $template;
+
+        $this->model = $model;
+
+        return $this->render($view);
+
+    }
+
+    public function getTitle($template_id)
+    {
+        switch ($template_id) {
+            case 01:
+                $title = '前任3：再见前任';
+                break;
+            case 02:
+                $title = '前任3：再见前任';
+                break;
+            default:
+                $title = '关注公众号码上合并youmahe';
+        }
+        return $title;
     }
 
 }
