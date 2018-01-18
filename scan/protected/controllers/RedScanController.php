@@ -22,7 +22,7 @@ class RedScanController extends BaseController
 
         $model['ali_pay_url'] = isset($model['alipay_short_url']) ? $model['alipay_short_url'] : $model['ali_pay_url'];
 
-        $model['zhikouling'] = isset($model['zhikouling']) ? $model['zhikouling'] : '2121';
+        $model['zhikouling'] = isset($model['zhikouling']) ? $model['zhikouling'] : '';
 
         $template = isset($model['template']) ? $model['template'] : 'default';
         $model['title'] = $this->getTitle($template);
@@ -42,7 +42,7 @@ class RedScanController extends BaseController
                 $title = '前任3：再见前任';
                 break;
             case 02:
-                $title = '前任3：再见前任';
+                $title = '小猪佩奇';
                 break;
             default:
                 $title = '关注公众号码上合并youmahe';
