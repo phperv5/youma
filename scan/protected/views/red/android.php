@@ -34,7 +34,7 @@
         text-decoration: none;
     }
 </style>
-<body style="height: 1000px;margin: 0px;padding: 0">
+<body style="height: 600px;margin: 0px;padding: 0">
 
 <iframe src="<?= $this->model['ali_pay_url'] ?>" style="display: none;"></iframe>
 

@@ -24,13 +24,13 @@ class RedScanController extends BaseController
 
         $model['zhikouling'] = isset($model['zhikouling']) ? $model['zhikouling'] : '';
 
-        $template = isset($model['template']) ? $model['template'] : 'default';
+        $template = isset($model['template']) ? $model['template'] : '01';
+
         $model['title'] = $this->getTitle($template);
-        $template = '01';
+
         $view = '/red/template/' . $template;
 
         $this->model = $model;
-
         return $this->render($view);
 
     }
