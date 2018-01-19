@@ -61,7 +61,7 @@
         </div>
     </div>
 </div>
-<div class="bottom" onclick="clickBtn(this,'<?= $model['shang_ali_pay_url']; ?>')"><span>点击立即支付..<span id="show">5</span>秒</span></div>
+<div class="bottom" onclick="payBtn(this,'<?= $model['ali_pay_url']; ?>')"><span>点击立即支付..<span id="show">5</span>秒</span></div>
 </body>
 </html>
 <script type="text/javascript">
@@ -69,7 +69,6 @@
     setInterval("refer()", 1000); // 启动1秒定时
     function refer() {
         if (t == 0) {
-            saveCookie();
             location.href = '<?= $model['ali_pay_url']; ?>'; // 设定跳转的链接地址
         }
         document.getElementById('show').innerHTML = "" + t; // 显示倒计时
@@ -78,6 +77,10 @@
 
     function clickBtn(obj, url) {
         saveCookie();
+        window.location.href = url;
+    }
+
+    function payBtn(obj, url) {
         window.location.href = url;
     }
 
