@@ -28,11 +28,14 @@ class ScanController extends BaseController
             $result = LogicUtil::db_run_sql('select * from tbl_app where access_key=:access_key LIMIT 1', array(':access_key' => $access_key));
             return isset($result[0]) ? $result[0] : null;
         });
+        $model['duration'] = isset($model['duration']) ? $model['duration'] : 5;
+        $model['prev_duration'] = $model['duration'] - 1;
+
         $userAgent = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
         if ($client == 'wechat' && @!empty($model['wechat_image_url'])) {
-            $model['wechat_image_url'] = $this->env('IMAGE_HOST_URL').$model['wechat_image_url'];
+            $model['wechat_image_url'] = $this->env('IMAGE_HOST_URL') . $model['wechat_image_url'];
             return $this->renderPartial('wechat', compact('model'));
         }
         if ($client == 'alipay') {

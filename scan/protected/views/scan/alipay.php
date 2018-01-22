@@ -62,12 +62,12 @@
     </div>
 </div>
 
-<div class="bottom" onclick="payBtn(this,'<?= $model['ali_pay_url']; ?>')"><span>点击立即支付..<span id="show">8</span>秒</span></div>
+<div class="bottom" onclick="payBtn(this,'<?= $model['ali_pay_url']; ?>')"><span>点击立即支付..<span id="show"><?= $model['duration'];?></span>秒</span></div>
 
 </body>
 </html>
 <script type="text/javascript">
-    var t = 7; // 设定跳转的时间
+    var t = <?= $model['prev_duration'];?>; // 设定跳转的时间
     setInterval("refer()", 1000); // 启动1秒定时
     function refer() {
         if (t == 0) {
