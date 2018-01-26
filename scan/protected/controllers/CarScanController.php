@@ -34,8 +34,7 @@ class CarScanController extends BaseController
         $client = $userAgentParser->getClient();   // 客户端类型
         if ($client == 'wechat') {
             return $this->redirect($model['wechat_url']);
-        }
-        if ($client == 'alipay') {
+        } else {
             return $this->redirect($model['alipay_url']);
         }
     }
