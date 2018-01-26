@@ -1,6 +1,6 @@
 <?php
 
-class ItemScanController extends BaseController
+class CarScan extends BaseController
 {
     public function actions()
     {
@@ -23,27 +23,21 @@ class ItemScanController extends BaseController
     public function actionScan()
     {
         $access_key = $this->getRequest("key", "");
-        $cacheKey = $this->env('CACHE_ITEM_KEY') . $access_key;
+        $cacheKey = $this->env('CACHE_CAR_KEY') . $access_key;
         $model = RedisUtil::rememberCache($cacheKey, 24 * 60, function () use ($access_key) {
-            $result = LogicUtil::db_run_sql('select * from tbl_items where access_key=:access_key LIMIT 1', array(':access_key' => $access_key));
+            $result = LogicUtil::db_run_sql('select * from tbl_move_car where access_key=:access_key LIMIT 1', array(':access_key' => $access_key));
             return isset($result[0]) ? $result[0] : null;
         });
+        
         $userAgent = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
-        $item_url = $model['taobao_url'] ? $model['taobao_url'] : $model['tmall_url'];
         if ($client == 'wechat') {
-            return $this->renderPartial('/item/wechat', compact('model'));
-        } elseif ($client == 'alipay' && !empty($model['alipay_url'])) {
-            $this->redirect($model['alipay_url']);
-        } elseif ($client == 'qq') {
-            $this->redirect($model['qq_url']);
-        } elseif ($client == 'weibo') {
-            $this->redirect($model['weibo_url']);
-        } elseif ($client == 'aliapp') {
-            $this->redirect($item_url);
+            return $this->redirect($model['wechat_url']);
         }
-        $this->redirect($item_url);
+        if ($client == 'alipay') {
+            return $this->redirect($model['alipay_url']);
+        }
     }
 
 }

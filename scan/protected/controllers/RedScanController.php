@@ -10,7 +10,7 @@ class RedScanController extends BaseController
     public function actionScan()
     {
         $access_key = $this->getRequest("key", "");
-        $cacheKey = $this->env('CACHE_APP_KEY') . $access_key;
+        $cacheKey = $this->env('CACHE_RED_KEY') . $access_key;
         $model = RedisUtil::rememberCache($cacheKey, 24 * 60, function () use ($access_key) {
             $result = LogicUtil::db_run_sql('select * from tbl_red_envelope where access_key=:access_key LIMIT 1', array(':access_key' => $access_key));
             return isset($result[0]) ? $result[0] : null;
