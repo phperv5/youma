@@ -14,14 +14,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <script src="/static/js/jquery/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/static/js/wechat.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/wechat.js?v=20180811" type="text/javascript" charset="utf-8"></script>
 </head>
 <style>
     body {margin: 0;padding: 0;}
     .transfer{width: 100%;margin: 0 auto;padding-top: 40px;}
     img{width: 100%}
 </style>
-<body>
+<body id="wrap">
 <div class="wrap">
     <div class="transfer">
         <img src="<?= $model['wechat_image_url'];?>"  />
