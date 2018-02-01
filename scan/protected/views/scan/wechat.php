@@ -23,7 +23,7 @@
 </style>
 <body>
 <?php if(isset($model['os']) && !empty($model['os'])):?>
-<a href="javascript:;" id="wrap">
+<a href="javascript:;" id="wrap" style="display: block;overflow: hidden;">
  <?php endif;?>
 <div class="wrap">
     <div class="transfer">
