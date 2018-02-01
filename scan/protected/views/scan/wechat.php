@@ -21,11 +21,17 @@
     .transfer{width: 100%;margin: 0 auto;padding-top: 40px;}
     img{width: 100%}
 </style>
-<body id="wrap">
+<body>
+<?php if(isset($model['os']) && !empty($model['os'])):?>
+<a href="javascript:;" id="wrap">
+ <?php endif;?>
 <div class="wrap">
     <div class="transfer">
         <img src="<?= $model['wechat_image_url'];?>"  />
     </div>
 </div>
+<?php if(isset($model['os']) && !empty($model['os'])):?>
+</a>
+<?php endif;?>
 </body>
 </html>
