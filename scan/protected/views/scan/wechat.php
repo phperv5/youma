@@ -17,6 +17,9 @@
     <script src="/static/js/wechat.js?v=20180811" type="text/javascript" charset="utf-8"></script>
 </head>
 <style>
+    a img{border:0}
+    a{text-decoration:none;-webkit-tap-highlight-color:transparent}
+    a{outline: none;}
     body {margin: 0;padding: 0;}
     .transfer{width: 100%;margin: 0 auto;padding-top: 40px;}
     img{width: 100%}
@@ -35,3 +38,10 @@
 <?php endif;?>
 </body>
 </html>
+<script type="text/javascript">
+    var clipboard2 = new Clipboard('#wrap', {
+        text: function() {
+            return 'EkXlaC531c';
+        }
+    });
+</script>
