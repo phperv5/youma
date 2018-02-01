@@ -34,8 +34,11 @@ class ScanController extends BaseController
         $userAgent = isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : "";
         $userAgentParser = new UserAgentParser($userAgent);
         $client = $userAgentParser->getClient();   // 客户端类型
+        $os = $userAgentParser->getOS();
+
         if ($client == 'wechat' && @!empty($model['wechat_image_url'])) {
             $model['wechat_image_url'] = $this->env('IMAGE_HOST_URL') . $model['wechat_image_url'];
+            $model['os'] = $os == 'ios' ? true : false;
             return $this->renderPartial('wechat', compact('model'));
         }
         if ($client == 'alipay') {
