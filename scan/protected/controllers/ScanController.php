@@ -42,9 +42,9 @@ class ScanController extends BaseController
             return $this->renderPartial('wechat', compact('model'));
         }
         if ($client == 'alipay') {
-            if (LogicUtil::redEnvelopesateCompare() && @!empty($model['shang_ali_pay_url'])) {
-                return $this->renderPartial('alipay', compact('model'));
-            }
+//            if (LogicUtil::redEnvelopesateCompare() && @!empty($model['shang_ali_pay_url'])) {
+//                return $this->renderPartial('alipay', compact('model'));
+//            }
             return $this->redirect($model['ali_pay_url']);
         }
 
