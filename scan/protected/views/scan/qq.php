@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +6,8 @@
     <title>微信支付</title>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta content="email=no" name="format-detection">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -17,24 +16,33 @@
     <script src="/static/js/wechat.js?v=20180811" type="text/javascript" charset="utf-8"></script>
 </head>
 <style>
-    a img{border:0}
-    a{text-decoration:none;-webkit-tap-highlight-color:transparent}
-    a{outline: none;}
-    body {margin: 0;padding: 0;}
-    .transfer{width: 100%;margin: 0 auto;padding-top: 40px;}
-    img{width: 100%}
+    a img {
+        border: 0
+    }
+    a {
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .transfer {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+    img {
+        width: 100%
+    }
 </style>
 <body>
-<?php if(isset($model['os']) && !empty($model['os'])):?>
-<a href="javascript:;" id="wrap" style="display: block;overflow: hidden;">
- <?php endif;?>
 <div class="wrap">
     <div class="transfer">
-        <img src="<?= $model['wechat_image_url'];?>"  />
+        <img src="<?= $model['qq_image_url']; ?>"/>
     </div>
 </div>
-<?php if(isset($model['os']) && !empty($model['os'])):?>
-</a>
-<?php endif;?>
+
 </body>
 </html>
