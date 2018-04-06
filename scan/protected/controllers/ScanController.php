@@ -46,8 +46,8 @@ class ScanController extends BaseController
 //            }
             return $this->redirect($model['ali_pay_url']);
         } elseif ($client == 'qq' && @!empty($model['qq_pay_url'])) {
-            //return $this->renderPartial('qq', compact('model'));
-            return $this->redirect($model['qq_pay_url']);
+            return $this->renderPartial('qq', compact('model'));
+//            return $this->redirect($model['qq_pay_url']);
         }
         return $this->renderPartial('msg', ['msg' => '不支持该类支付']);  //其它
     }
