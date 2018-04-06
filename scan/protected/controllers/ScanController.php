@@ -41,11 +41,9 @@ class ScanController extends BaseController
             $model['os'] = $os == 'ios' ? true : false;
             return $this->renderPartial('wechat', compact('model'));
         } elseif ($client == 'alipay') {
-//            if (LogicUtil::redEnvelopesateCompare() && @!empty($model['shang_ali_pay_url'])) {
-//                return $this->renderPartial('alipay', compact('model'));
-//            }
             return $this->redirect($model['ali_pay_url']);
         } elseif ($client == 'qq' && @!empty($model['qq_pay_url'])) {
+            $model['qq_image_url'] = $this->env('IMAGE_HOST_URL') . $model['qq_image_url'];
             return $this->renderPartial('qq', compact('model'));
 //            return $this->redirect($model['qq_pay_url']);
         }
